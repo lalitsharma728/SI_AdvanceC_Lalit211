@@ -1,20 +1,27 @@
-//Equilibrium index
+#include <stdio.h>
+#include <math.h>
 
-#include<stdio.h>
-int main(){
-    int arr1[5]={1,3,5,2,2};
-    for(int i=1;i<4;i++){
-        int sumr=0;
-        int suml=0;
-        for(int j=i+1;j<5;j++){
-            sumr+=arr1[j];
-        }
-        for(int j=i-1;j>=0;j--){
-            suml+=arr1[j];
-        } 
-        if (sumr==suml){
-            printf("%d",i);
-            break;
-        }
-    }
+int main() {
+    float principal, rate, time, si, base, ci_amt, ci;
+
+
+    printf("Enter principal amount: ");
+    scanf("%f", &principal);
+
+    printf("Enter annual interest rate (in %%): ");
+    scanf("%f", &rate);
+
+    printf("Enter time period (in years): ");
+    scanf("%f", &time);
+
+    si = (principal * rate * time) / 100;
+
+    base = (1 + rate / 100);
+    ci_amt = principal * pow(base, time);
+    ci = ci_amt - principal;
+
+    printf("Simple Interest:   %f\n", si);
+    printf("Compound Interest: %f\n", ci);
+
+    return 0;
 }

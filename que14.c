@@ -1,23 +1,17 @@
-//Majority Element  
-
 #include<stdio.h>
+
 int main(){
-    int arr[8]={1,2,3,2,2,2,2,3};
-    int count=0;
-    for(int i=0;i<8;i++){
-        count=0;
-        for(int j=i+1;j<8;j++){
-            if(arr[i]==arr[j]){
-                count++;
-            }
-            else{
-                count--;
-            }
-        }
-        if(count>1){
-            printf("majority number is %d",arr[i]);
-            break;
-        }
+
+    int year;
+
+    printf("Enter the year :");
+    scanf("%d",&year);
+
+    if((year%4==0 && year%100!=0)||(year%400==0)){
+        printf("%d is a leap year.\n",year);
+    }
+    else{
+        printf("%d is not a leap year.\n",year);            
     }
 
     return 0;

@@ -1,46 +1,18 @@
-#include <stdio.h>
+#include<stdio.h>
 
-int main()
-{
-    int arr1[3]={1,3,5};
-    int arr2[3]={2,4,6};
-    int arr3[6];
-    int k=0;
+int main(){
 
-    for(int i=0;i<3;i++)
-        arr3[k++]=arr1[i];
+    char ch;
 
-    for(int i=0;i<3;i++)
-        arr3[k++]=arr2[i];
+    printf("Enter the character :");
+    scanf("%c",&ch);
 
-    int s = sizeof(arr3)/sizeof(arr3[0]);
-    int temp;
-
-    for(int i=0;i<s-1;i++)
-    {
-        for(int j=0;j<s-i-1;j++)
-        {
-            if(arr3[j] > arr3[j+1])
-            {
-                temp = arr3[j];
-                arr3[j] = arr3[j+1];
-                arr3[j+1] = temp;
-            }
-        }
+    if(ch=='a' || ch=='e' || ch=='i' || ch=='o' || ch=='u' || ch=='A' || ch=='E' || ch=='I' || ch=='O' || ch=='U'){
+        printf("Character %c is a vowel.\n",ch);
     }
-
-    float ma;
-
-    if(s%2==0)
-    {
-        ma = (arr3[s/2] + arr3[(s/2)-1]) / 2.0;
+    else{
+        printf("Character %c is not a vowel.\n",ch);
     }
-    else
-    {
-        ma = arr3[s/2];
-    }
-
-    printf("Median = %.2f", ma);
 
     return 0;
 }

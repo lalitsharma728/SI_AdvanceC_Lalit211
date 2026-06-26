@@ -1,34 +1,19 @@
 #include<stdio.h>
 
-int main()
-{
-    int arr1[3][3] = { {1,2,3}, {4,5,6}, {7,8,9} };
-    int tar, row = -1, found = 0;
+int main(){
 
-    printf("Enter the target value: ");
-    scanf("%d", &tar);
+    int total_days;
 
-    for(int i = 0; i < 3; i++){
-        if(arr1[i][0] <= tar){
-            row = i;
-        }
-    }
+    printf("Enter number of days : ");
+    scanf("%d",&total_days);
 
-    if(row == -1){
-        printf("Not found");
-        return 0;
-    }
+    int year = total_days/365;
+    int remain_days = total_days%365;
+    int months = remain_days/30;
+    int days = remain_days%30;
 
-    for(int i = 0; i < 3; i++){
-        if(arr1[row][i] == tar){
-            printf("Found at (%d, %d)", row, i);
-            found = 1;
-        }
-    }
+    printf("%d days is equal to %d years %d months and %d days",total_days, year,months, days);
 
-    if(found == 0){
-        printf("Not found");
-    }
 
     return 0;
 }
